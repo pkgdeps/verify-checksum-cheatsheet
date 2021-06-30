@@ -23,5 +23,7 @@ grep -e "jq-linux64$" jq.sha256sum | shasum --check - || (echo "Error: Not match
 chmod 755 jq-linux64 && ln -sfnv "$(pwd)/jq-linux64" "$(pwd)/jq"
 ```
 
+Related examples:
+
 - [pkgdeps/curl-jq-checksum-example](https://github.com/pkgdeps/curl-jq-checksum-example)
 - [pkgdeps/curl-kustomize-checksum-example: Download kustomize command and verify the checksum using shasum.](https://github.com/pkgdeps/curl-kustomize-checksum-example)
