@@ -14,6 +14,11 @@ masOS: use `shasum -a 256` instead of `sha256sum`
 ```bash
 #!/bin/bash
 
+# require sha256sum command
+if   command -v sha256sum > /dev/null; then sha256sum="sha256sum"
+elif command -v sha256 > /dev/null;    then sha256sum="sha256 -r"
+elif command -v shasum > /dev/null;    then sha256sum="shasum -a 256"
+fi
 # docs: https://github.com/pkgdeps/verify-checksum-cheatsheet
 declare JQ_VERSION="1.6"
 # Download binary and checksum
